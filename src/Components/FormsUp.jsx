@@ -1,4 +1,5 @@
 import { useRef, useState } from "react"
+import { createUser } from "../services/UserServices"
 
 
 function FormsUp() {
@@ -9,9 +10,10 @@ function FormsUp() {
         senha: ""
     })
 
-    function handleSubmit(e) {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         console.log(form)
+        await createUser(form)
     }
 
     
@@ -30,7 +32,7 @@ function FormsUp() {
 
     return(
         <div className=" flex items-center justify-center min-h-screen bg-gray-800">
-                <form onSubmit={handleSubmit} className="flex flex-col items-center space-y-6 w-full max-w-md">
+                <form className="flex flex-col items-center space-y-6 w-full max-w-md" onSubmit={handleSubmit}>
                     <div className=" space-y-1 w-full">
                         <label className=" text-white ">
                             Nome de usuario
@@ -61,7 +63,7 @@ function FormsUp() {
                         })} onKeyDown={(e) => handKeyDown(e, null)}/>
                     </div>
 
-                    <button type="submit" className="border-transparent rounded-md bg-white font-semibold text-neutral-900 w-full max-w-[600px] p-2 "> Cadastrar </button>
+                    <button type="submit" className="border-transparent rounded-md bg-white font-semibold text-neutral-900 w-full max-w-[600px] p-2 " > Cadastrar </button>
             </form>
 
         </div>
