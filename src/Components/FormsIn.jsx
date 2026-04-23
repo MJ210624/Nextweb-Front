@@ -13,7 +13,7 @@ function FormsIn() {
     }
     
     return(
-        <div className="flex flex-col  items-center h-screen bg-gray-700">
+        <div className="flex flex-col  items-center h-screen bg-gray-800">
             <h1 className="  absolute text-xl font-bold  text-slate-300 p-10">(logo) NextWeb</h1>
             <div className=" space-y-4 h-screen flex flex-col justify-center items-center w-[90%]">
                 <h1 className="  text-2xl font-bold  text-slate-300 p-10">Conecte-se com as pessoas mais próximas do seu ambiemte</h1>
