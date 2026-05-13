@@ -32,7 +32,7 @@ function FormsIn() {
             
                 {/*depois mudar o href para link*/}
                 <p> 
-                    Não tem uma conta? <a className="text-blue-400" href="/.pages/SignUp.jsx">Cadastre-se</a>
+                    Não tem uma conta? <a className="text-blue-400" href="/signup">Cadastre-se</a>
                 </p>
             </div>
             <footer className="w-full text-slate-500 text-center pb-1">
