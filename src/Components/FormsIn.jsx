@@ -16,7 +16,7 @@ function FormsIn() {
         <div className="flex flex-col  items-center h-screen bg-gray-800">
             <h1 className="  absolute text-xl font-bold  text-slate-300 p-10">(logo) NextWeb</h1>
             <div className=" space-y-4 h-screen flex flex-col justify-center items-center w-[90%]">
-                <h1 className="  text-2xl font-bold  text-slate-300 p-10">Conecte-se com as pessoas mais próximas do seu ambiemte</h1>
+                <h1 className="  text-2xl font-bold  text-slate-300 p-10">Conecte-se com as pessoas mais próximas do seu ambiente</h1>
                 <div className=" w-[90%]">
                     <input type="email" placeholder="Email" className=" rounded-md border font-medium border-slate-500 w-full max-w-[600px] p-2 " onChange={(e) => {
                         setEmail(e.target.value)
@@ -32,7 +32,7 @@ function FormsIn() {
             
                 {/*depois mudar o href para link*/}
                 <p> 
-                    Não tem uma conta? <a className="text-blue-400" href="VibeCoding.com">Cadastre-se</a>
+                    Não tem uma conta? <a className="text-blue-400" href="/.pages/SignUp.jsx">Cadastre-se</a>
                 </p>
             </div>
             <footer className="w-full text-slate-500 text-center pb-1">
