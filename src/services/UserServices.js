@@ -1,6 +1,6 @@
 const createUser = async (body) => {
     try {
-        const res = await fetch("", {
+        const res = await fetch("https://back-nextweb.onrender.com/user", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
