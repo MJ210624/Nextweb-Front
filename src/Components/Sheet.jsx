@@ -42,6 +42,7 @@ function Sheet({ open, setOpen }) {
             <Settings size={18} />
             Configurações
           </NavLink>
+          
 
         </div>
       </div>

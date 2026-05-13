@@ -4,7 +4,7 @@ import NavBar from '../Components/NavBar'
 function HomePage () {
   return (
     <header>
-      <NavBar/>
+      <NavBar />
     </header>
   )
 }
