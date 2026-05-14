@@ -6,38 +6,54 @@ const communities = [
   {
     id: 1,
     name: "IFCE Comunidade",
-    description: "Comunidade para Alunos do IFCE",
+    description: "Comunidade do IFCE",
     members: 1200,
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/8/88/Cefetce.JPG",
+      "href=#",
   },
   {
     id: 2,
     name: "UFC Comunidade",
-    description: "comunidade do balacubaco da ufce",
+    description: "Comunidade da UFC",
     members: 1209,
     image:
         "href=#",
   },
+  {
+    id: 3,
+    name: "UECE Comunidade",
+    description: "Comunidade da UECE",
+    members: 1100,
+    image:
+        "href=#",
+  },
+  {
+    id: 4,
+    name: "UNIFOR Comunidade",
+    description: "Comunidade da UNIFOR",
+    members: 1300,
+    image:
+        "href=#",
+  }
 ];
 
 function Communities() {
   return (
     
 
-    <div className="lex items-center justify-center min-h-screen bg-gray-600">
+    <div className="lex items-center justify-center min-h-screen bg-gray-800">
         <header>
             <NavBar />
         </header>
 
       <div className="px-8 mt-6">
-        <div className="flex items-center bg-white rounded-2xl px-4 py-3 shadow-sm border">
+        <div className="flex items-center bg-gray-700 rounded-2xl px-4 py-3 shadow-sm border-gray-700">
           <Search size={18} className="text-gray-400" />
 
           <input
             type="text"
             placeholder="Pesquisar comunidades..."
-            className="ml-3 w-full outline-none bg-transparent"
+            className="ml-3 w-full outline-none bg-transparent text-white"
           />
         </div>
       </div>
@@ -47,7 +63,7 @@ function Communities() {
         {communities.map((community) => (
           <div
             key={community.id}
-            className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition"
+            className="bg-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition"
           >
             <img
               src={community.image}
@@ -70,7 +86,7 @@ function Communities() {
                 {community.members} membros
               </div>
 
-              <button className="mt-5 w-full bg-black text-white py-2 rounded-xl hover:opacity-90 transition">
+              <button className="mt-5 w-full bg-slate-800 text-white py-2 rounded-xl hover:opacity-90 transition">
                 Entrar
               </button>
 

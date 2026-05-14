@@ -12,13 +12,13 @@ function Sheet({ open, setOpen }) {
       />
 
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg p-5 transform transition-transform ${
+        className={`fixed top-0 right-0 h-full w-64 bg-gray-700 shadow-lg p-5 transform transition-transform ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-lg font-semibold">Menu</h2>
-          <button onClick={() => setOpen(false)}>
+          <h2 className="text-lg font-semibold text-slate-300">Menu</h2>
+          <button className=" text-slate-300" onClick={() => setOpen(false)}>
             <X />
           </button>
         </div>
@@ -26,18 +26,18 @@ function Sheet({ open, setOpen }) {
         <div className="flex flex-col gap-4">
 
           <NavLink
-            to="/perfil"
+            to="/profile"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-2 text-gray-700 hover:text-black"
+            className="flex items-center gap-2 text-slate-300 hover:text-black"
           >
             <User size={18} />
             Perfil
           </NavLink>
 
           <NavLink
-            to="/configuracoes"
+            to="/configurations"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-2 text-gray-700 hover:text-black"
+            className="flex items-center gap-2 text-slate-300 hover:text-black"
           >
             <Settings size={18} />
             Configurações

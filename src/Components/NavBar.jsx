@@ -8,11 +8,11 @@ function NavBar() {
 
   return (
     <>
-      <nav className="bg-gray-800 border-b border-gray-700 px-4 py-3">
+      <nav className="bg-gray-900 border-b border-gray-700 px-4 py-3">
 
         <div className="flex items-center justify-between gap-4 flex-wrap">
 
-          <h1 className="text-xl font-bold text-white shrink-0">
+          <h1 className="text-xl font-bold text-slate-300 shrink-0">
             NextWeb
           </h1>
 
