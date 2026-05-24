@@ -23,7 +23,7 @@ function FormsUp() {
 
       await createUser(form);
 
-      navigate("/homepage");
+      navigate("/");
     } catch (e) {
       console.log(e);
     }

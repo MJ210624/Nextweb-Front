@@ -1,19 +1,35 @@
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { verifyUser } from "../services/UserServices";
 
 function FormsIn() {
   const navigate = useNavigate()
-  
+
   const [mostrar, setMostrar] = useState(false);
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+  const [form, setForm] = useState({
+    email: "",
+    senha: ""
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
-    console.log(`Email: ${email}`);
-    console.log(`Senha: ${senha}`);
+const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+
+     const verify = await verifyUser(form);
+     if(verify.ok === false){
+      alert("Credenciais inválidas")
+     }else{
+      alert("Login realizado com sucesso")
+      navigate('/homepage')
+     }
+
+     
+
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
@@ -39,11 +55,15 @@ function FormsIn() {
             <input
               required
               type="email"
+              name="email"
               placeholder="Email"
               className="rounded-md border border-slate-500 w-full p-2 bg-gray-700 text-white outline-none focus:border-blue-400"
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
+              onChange={(e) =>
+                  setForm({
+                    ...form,
+                    [e.target.name]: e.target.value,
+                  })
+                }
             />
           </div>
 
@@ -57,10 +77,14 @@ function FormsIn() {
                 required
                 type={mostrar ? "text" : "password"}
                 placeholder="Senha"
+                name="senha"
                 className="rounded-md border border-slate-500 w-full p-2 pr-10 bg-gray-700 text-white outline-none focus:border-blue-400"
-                onChange={(e) => {
-                  setSenha(e.target.value);
-                }}
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    [e.target.name]: e.target.value,
+                  })
+                }
               />
 
               <button
