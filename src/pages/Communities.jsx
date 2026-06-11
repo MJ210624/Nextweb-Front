@@ -11,18 +11,21 @@ function Communities() {
   const [communities, setCommunities] = useState([])
   
   useEffect(() => {
-    async function loadCommunities() {
-      try {
-        const data = await getcommunities()
-        setCommunities(data)
-      } catch (e) {
-        console.error(e)
-        navigate('/homepage')
-      }
-    }
-  
-    loadCommunities()
-  }, [])
+  setCommunities([
+    {
+      id: 1,
+      nameCommunity: "Programadores Front-End",
+    },
+    {
+      id: 2,
+      nameCommunity: "Flutter Brasil",
+    },
+    {
+      id: 3,
+      nameCommunity: "Node.js Devs",
+    },
+  ]);
+}, []);
 
   return (
 
