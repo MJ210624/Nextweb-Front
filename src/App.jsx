@@ -13,7 +13,6 @@ function App() {
       <Route path="/signup" element={<SignUp />} />
       <Route path="/homepage" element={<HomePage />} />
       <Route path="/communities" element={<Communities />} />
-
       <Route
         path="/communities/:communityId"
         element={<CommunityPage />}
