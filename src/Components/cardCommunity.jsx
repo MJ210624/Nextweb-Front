@@ -18,7 +18,7 @@ function CardCommunities({ communities }) {
 
             <button
               onClick={() =>
-                navigate(`/communities/${community.id}`)
+                navigate(`/chats/${community.id}`)
               }
               className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl"
             >
