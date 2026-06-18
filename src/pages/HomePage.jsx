@@ -53,12 +53,12 @@ function HomePage() {
 
           </div>
 
-          {/* Comunidades do usuário */}
+          {/*
           <div className="mt-16">
             <h2 className="text-2xl font-bold text-white mb-6">
               Suas Comunidades
             </h2>
-
+            
             <div className="grid md:grid-cols-3 gap-6">
               {communities.map((community) => (
                 <div
@@ -79,8 +79,8 @@ function HomePage() {
                 </div>
               ))}
             </div>
+            */}
           </div>
-        </div>
       </section>
 
       {/* Recursos */}

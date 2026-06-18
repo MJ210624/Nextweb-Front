@@ -10,16 +10,20 @@ export default function Profile() {
     // Criar ela no CommunityServices
     // E usar a rota certa no UserService para puxar dados do usuario
 
-    const [user, setUser] = useState(null)
+    const user = 
+        {
+            id: 1,
+            name: "usuario343",
+            email: "usuario@gmail.com"
+        }
+
     const [communities, setCommunities] = useState([])
 
     useEffect(() => {
         async function loadData() {
             try {
-                const userData = await getUser();
                 const communitiesData = await getcommunities();
 
-                setUser(userData);
                 setCommunities(communitiesData);
             } catch (e) {
                 console.error(e);
@@ -29,13 +33,6 @@ export default function Profile() {
         loadData();
     }, []);
 
-    if (!user) {
-        return (
-            <div className="min-h-screen bg-gray-800 text-white flex items-center justify-center">
-                Carregando...
-            </div>
-        );
-    }
 
     const projects = [
         {
