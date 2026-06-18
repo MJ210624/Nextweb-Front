@@ -93,7 +93,7 @@ export default function Profile() {
                                 className="bg-gray-700 rounded-3xl p-6 hover:scale-[1.02] transition"
                             >
                                 <h3 className="text-xl font-bold">
-                                    {community.name}
+                                    {community.nameCommunity}
                                 </h3>
                                 <button
                                     onClick={() =>
