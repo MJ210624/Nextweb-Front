@@ -23,8 +23,9 @@ export default function Profile() {
         async function loadData() {
             try {
                 const communitiesData = await getcommunities();
-
+                console.log(communities)
                 setCommunities(communitiesData);
+
             } catch (e) {
                 console.error(e);
             }

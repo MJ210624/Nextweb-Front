@@ -16,6 +16,7 @@ const navigate = useNavigate()
       try {
         const data = await getcommunities()
         setCommunities(data)
+        console.log(data)
       } catch (e) {
         console.error(e)
         navigate('/homepage')
