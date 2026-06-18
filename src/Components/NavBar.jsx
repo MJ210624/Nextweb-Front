@@ -51,10 +51,7 @@ function NavBar() {
               </NavLink>
 
 
-              <div className="flex items-center bg-gray-700 px-3 py-2 rounded-xl flex-1 min-w-[180px] max-w-sm">
-                <Search size={18} className="text-gray-400 shrink-0" />
-                <input type="text" placeholder="Pesquisar" className="bg-transparent outline-none ml-2 w-full text-sm text-white placeholder:text-gray-400" />
-              </div>
+              
             </div>
 
             <NavLink to="/profile" className={({ isActive }) => `transition p-2 rounded-lg ${isActive ? "text-blue-500 bg-gray-700" : "text-gray-300 hover:text-white hover:bg-gray-700"}`} >
