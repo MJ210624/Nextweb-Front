@@ -5,6 +5,24 @@ import NavBar from "../Components/NavBar";
 function HomePage() {
   const navigate = useNavigate();
 
+  const userCommunities = [
+    {
+      id: 9,
+      name: "Engenharia de Prompt",
+
+    },
+    {
+      id: 8,
+      name: "Desenvolvimento Web",
+
+    },
+    {
+      id: 7,
+      name: "Banco de Dados",
+
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gray-800">
       <header>
@@ -33,11 +51,34 @@ function HomePage() {
               <ArrowRight size={20} />
             </button>
 
-            <button
-              className="border border-gray-500 text-white px-8 py-4 rounded-2xl hover:bg-gray-700"
-            >
-              Saiba Mais
-            </button>
+          </div>
+
+          {/* Comunidades do usuário */}
+          <div className="mt-16">
+            <h2 className="text-2xl font-bold text-white mb-6">
+              Suas Comunidades
+            </h2>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {userCommunities.map((community) => (
+                <div
+                  key={community.id}
+                  className="bg-gray-700 rounded-2xl p-5 hover:bg-gray-600 transition cursor-pointer"
+                >
+                  <h3 className="text-lg font-semibold text-white">
+                    {community.name}
+                  </h3>
+                  <button
+                    onClick={() =>
+                      navigate(`/chats/${community.id}`)
+                    }
+                    className="mt-4 bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 rounded-xl"
+                  >
+                    Entrar
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

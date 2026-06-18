@@ -1,6 +1,9 @@
 import { useState } from "react";
 import NavBar from "../Components/NavBar";
 import { Plus, Hash, Send, X } from "lucide-react";
+import { useParams } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { ChatContext } from "./ChatContext";
 
 function CommunityPage() {
   const [channels, setChannels] = useState([
@@ -86,6 +89,16 @@ function CommunityPage() {
     setNewChannelName("");
     setShowModal(false);
   }
+
+  const { communityId } = useParams();
+  const { setLastChatId } = useContext(ChatContext);
+
+  useEffect(() => {
+  if (communityId) {
+    setLastChatId(communityId);
+  }
+}, [communityId, setLastChatId]);
+
 
   return (
     <div className="min-h-screen bg-gray-800 flex flex-col">
