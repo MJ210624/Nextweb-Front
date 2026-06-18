@@ -3,8 +3,10 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import HomePage from "./pages/HomePage";
 import Communities from "./pages/Communities";
-import Chats from "./pages/Chats";
-import CommunityPage from "./pages/CommunityPage";
+
+import CommunityChat from "./pages/CommunityChat";
+import Profile from "./pages/Profile"
+
 
 function App() {
   return (
@@ -14,15 +16,9 @@ function App() {
       <Route path="/homepage" element={<HomePage />} />
       <Route path="/communities" element={<Communities />} />
 
-      <Route
-        path="/communities/:communityId"
-        element={<CommunityPage />}
-      />
+      <Route path="/chats/:communityId" element={<CommunityChat />} />
+      <Route path="/profile" element={<Profile />} />
 
-      <Route
-        path="/communities/:communityId/chats/:chatId"
-        element={<Chats />}
-      />
     </Routes>
   );
 }

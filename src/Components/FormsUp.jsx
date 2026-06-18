@@ -29,7 +29,8 @@ function FormsUp() {
     }
   };
 
-        function handKeyDown(e, nextRef) {
+
+  function handKeyDown(e, nextRef) {
     if (e.key === "Enter") {
       e.preventDefault();
       nextRef?.current?.focus();
