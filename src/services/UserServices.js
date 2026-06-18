@@ -35,4 +35,27 @@ const verifyUser = async (body) => {
     }
 }
 
-export { createUser, verifyUser }
+const getUser = async () => {
+    try {
+        const response = await fetch(
+            'https://back-nextweb.onrender.com/user',
+            {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }
+        )
+
+        const user = await response.json()
+
+        return user
+    }
+    catch (e) {
+        console.error(e)
+        throw e
+    }
+}
+
+
+export { createUser, verifyUser, getUser}

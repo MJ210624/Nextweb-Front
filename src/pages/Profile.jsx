@@ -1,25 +1,41 @@
 import { User, Users, FolderGit2, Rocket } from "lucide-react";
 import NavBar from "../Components/NavBar";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { getUser } from "../services/UserServices";
+import getcommunities from "../services/CommunityServices";
 
 export default function Profile() {
-    // Dados vindos do backend
-    const user = {
-        name: "Renan Santos",
-        email: "renan@email.com",
-    };
+    // Aqui precisaria mudar apenas para a função que traga as comunidades de um usuario
+    // Criar ela no CommunityServices
+    // E usar a rota certa no UserService para puxar dados do usuario
 
-    const communities = [
-        {
-            id: 1,
-            name: "React Brasil",
+    const [user, setUser] = useState(null)
+    const [communities, setCommunities] = useState([])
 
-        },
-        {
-            id: 2,
-            name: "Node.js Community",
-        },
-    ];
+    useEffect(() => {
+        async function loadData() {
+            try {
+                const userData = await getUser();
+                const communitiesData = await getcommunities();
+
+                setUser(userData);
+                setCommunities(communitiesData);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        loadData();
+    }, []);
+
+    if (!user) {
+        return (
+            <div className="min-h-screen bg-gray-800 text-white flex items-center justify-center">
+                Carregando...
+            </div>
+        );
+    }
 
     const projects = [
         {

@@ -1,27 +1,26 @@
 import { Users, MessageCircle, Rocket, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import NavBar from "../Components/NavBar";
+import getcommunities from "../services/CommunityServices";
 
 function HomePage() {
   const navigate = useNavigate();
+  {/* Mesmo esquema do Communities*/}
+  const [communities, setCommunities] = useState([])
 
-  const userCommunities = [
-    {
-      id: 9,
-      name: "Engenharia de Prompt",
+  useEffect(() => {
+    async function loadCommunities() {
+      try {
+        const data = await getcommunities()
+        setCommunities(data)
+      } catch (e) {
+        console.error(e)
+      }
+    }
 
-    },
-    {
-      id: 8,
-      name: "Desenvolvimento Web",
-
-    },
-    {
-      id: 7,
-      name: "Banco de Dados",
-
-    },
-  ];
+    loadCommunities()
+  }, [])
 
   return (
     <div className="min-h-screen bg-gray-800">
@@ -60,13 +59,13 @@ function HomePage() {
             </h2>
 
             <div className="grid md:grid-cols-3 gap-6">
-              {userCommunities.map((community) => (
+              {communities.map((community) => (
                 <div
                   key={community.id}
                   className="bg-gray-700 rounded-2xl p-5 hover:bg-gray-600 transition cursor-pointer"
                 >
                   <h3 className="text-lg font-semibold text-white">
-                    {community.name}
+                    {community.nameCommunity}
                   </h3>
                   <button
                     onClick={() =>
