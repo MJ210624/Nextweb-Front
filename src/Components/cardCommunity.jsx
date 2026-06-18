@@ -10,11 +10,7 @@ function CardCommunities({ communities }) {
           key={community.id}
           className="bg-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition"
         >
-          <img
-            src="https://placehold.co/600x250"
-            alt={community.nameCommunity}
-            className="h-40 w-full object-cover"
-          />
+          
 
           <div className="p-5">
             <h2 className="text-xl font-semibold">
