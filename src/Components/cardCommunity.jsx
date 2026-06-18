@@ -8,20 +8,20 @@ function CardCommunities({ communities }) {
       {communities.map((community) => (
         <div
           key={community.id}
-          className="bg-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition"
+          className="bg-gray-700 rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition"
         >
           
 
           <div className="p-5">
-            <h2 className="text-xl font-semibold">
+            <h2 className="text-xl text-white font-semibold">
               {community.nameCommunity}
             </h2>
 
             <button
               onClick={() =>
-                navigate(`/communities/${community.id}`)
+                navigate(`/chats/${community.id}`)
               }
-              className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl"
+              className="mt-4 bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 rounded-xl"
             >
               Entrar
             </button>
